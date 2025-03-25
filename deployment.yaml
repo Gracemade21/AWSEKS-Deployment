@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: musician-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: musician
+  template:
+    metadata:
+      labels:
+        app: musician
+    spec:
+      containers:
+      - name: musician-app
+        image: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/musician-app:latest
+        ports:
+        - containerPort: 3001

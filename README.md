@@ -14,7 +14,7 @@ This guide provides a **step-by-step approach** to deploying the **Node.js Music
 1. Go to the **AWS Management Console** → Navigate to **EC2**.
 2. Click **Launch Instance**.
 3. Select **Ubuntu 22.04 LTS** (or latest version).
-4. Choose instance type (**t3.medium** recommended for better performance).
+4. Choose instance type (**t2.micro** recommended for better performance).
 5. Configure Security Group:
    - **Allow SSH (port 22)** for remote access.
    - **Allow HTTP (port 80)** for web access.
@@ -110,7 +110,7 @@ aws --version
 
 ## **Step 5: Create an EKS Cluster from EC2**
 ```sh
-eksctl create cluster --name musician-cluster --region us-east-1 --nodes 3 --node-type t3.medium --managed
+eksctl create cluster --name musician-cluster --region us-east-1 --nodes 3 --node-type t2.micro --managed
 ```
 Verify the cluster:
 ```sh
